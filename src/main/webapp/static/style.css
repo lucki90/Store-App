@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+}
+
+h4 {
+    color: navy;
+    margin-left: 200px;
+}
+
+.cell {
+    width: 400px;
+    background-color: green;
+}

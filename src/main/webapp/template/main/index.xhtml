@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/template/common/schema.xhtml">
+    <ui:define name="content">
+        <h3>Witaj w sklepie internetowym!</h3>
+        <h:panelGrid columnClasses="cell" columns="2">
+            <ui:include src="/template/common/category.xhtml"/>
+            <h:panelGroup>
+                <h:form>
+                    <h4>Twój koszyk</h4>
+                    <h:commandLink value="Przejdź"/>
+                    <h4>Przejdź do wybranego produktu...</h4>
+                    <h:selectOneMenu>
+                        <f:selectItem itemLabel="Procesor Quead" itemValue="processor_quad"/>
+                        <f:selectItem itemLabel="Procesor Dual" itemValue="processor_dual"/>
+                    </h:selectOneMenu>
+                    <h:commandButton value="Idź"/>
+                </h:form>
+            </h:panelGroup>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
+
+</html>
