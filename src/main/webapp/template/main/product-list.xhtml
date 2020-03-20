@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/template/common/schema.xhtml">
+    <ui:define name="content">
+        <h2> Lista produktów dla kategorii Oprogramowanie</h2>
+        <h:dataTable id="productTable">
+            <h:column>
+                <f:facet name="header">Nazwa</f:facet>
+                <h:outputText value="Name"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Cena</f:facet>
+                <h:outputText value="Price"/>
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
+
+</html>
+

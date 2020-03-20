@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/template/common/schema.xhtml">
+    <ui:define name="content">
+        <h2>Koszyk</h2>
+        <h:form>
+            <h:dataTable>
+                <h:column>
+                    <f:facet name="header">Nawa</f:facet>
+                    <h:outputText value="Procesor Quad"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cena</f:facet>
+                    <h:outputText value="Cena"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ilośc</f:facet>
+                    <h:inputText value="1" size="3"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Przelicz</f:facet>
+                    <h:commandButton value="Przelicz"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Usuń</f:facet>
+                    <h:commandButton value="Usuń"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Do kasy"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>
+
