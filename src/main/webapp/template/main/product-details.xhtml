@@ -7,14 +7,17 @@
 
 <ui:composition template="/template/common/schema.xhtml">
     <ui:define name="content">
-        <h2> Procesor Quad</h2>
+        <h2><h:outputText value="#{productDetailBean.chosenProduct.name}"/></h2>
         <h:panelGrid columns="2" border="1">
             <h:outputText value="Cena:"/>
-            <h:outputFormat value="(0) zł">
-                <f:param value="555,0"/>
+            <h:outputFormat value="{0} zł">
+                <f:param value="#{productDetailBean.chosenProduct.price}"/>
             </h:outputFormat>
             <h:outputText value="Opis:"/>
-            <h:outputText value="Opis procesora"/>
+            <h:outputText value="#{productDetailBean.chosenProduct.description}"/>
+            <h:commandButton value="Dodaj do koszyka">
+                <f:param name="productId" value="#{productDetailBean.chosenProduct.id}"/>
+            </h:commandButton>
         </h:panelGrid>
     </ui:define>
 </ui:composition>

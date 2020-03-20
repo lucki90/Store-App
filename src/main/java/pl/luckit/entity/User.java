@@ -11,6 +11,9 @@ public class User {
 
     private int id;
     private String email;
+    private String name;
+    private String secondName;
+    private String address;
 
     public User() {
     }

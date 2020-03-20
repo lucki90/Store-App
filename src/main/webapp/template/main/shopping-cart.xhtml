@@ -9,18 +9,22 @@
     <ui:define name="content">
         <h2>Koszyk</h2>
         <h:form>
-            <h:dataTable>
+            <h:dataTable value="#{shoppingCartBean.order.ingredients}" var="ingredient">
                 <h:column>
                     <f:facet name="header">Nawa</f:facet>
-                    <h:outputText value="Procesor Quad"/>
+                    <h:outputText value="#{ingredient.product.name}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Cena</f:facet>
-                    <h:outputText value="Cena"/>
+                    <h:outputText value="#{ingredient.price}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Ilośc</f:facet>
-                    <h:inputText value="1" size="3"/>
+                    <h:inputText value="#{ingredient.quantity}" size="3"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Lącznie</f:facet>
+                    <h:outputText id="summary" value="#{ingredient.summary}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Przelicz</f:facet>

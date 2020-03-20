@@ -7,9 +7,14 @@
 <ui:component>
     <h:form>
         <h4>Kategorie</h4>
+        <h:outputText value="sadasdasd"/>
         <ul>
-            <li><h:commandLink value="Procesory"/> </li>
-            <li><h:commandLink value="Obudowy"/> </li>
+            <ui:repeat value="#{categoryBean.categories}" var="category">
+                <li>
+                    <h:commandLink value="#{category.getName()}"></h:commandLink>
+                </li>
+            </ui:repeat>
+
         </ul>
     </h:form>
 </ui:component>

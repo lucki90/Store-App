@@ -3,18 +3,18 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="/template/common/schema.xhtml">
     <ui:define name="content">
         <h2>Zakończ zamówienie</h2>
         <h:panelGrid columns="2">
             <h:outputText value="Imię:"/>
-            <h:inputText/>
+            <h:inputText value="#{shoppingCartBean.ingredient.user.name}"/>
             <h:outputText value="Naziwsko:"/>
-            <h:inputText/>
+            <h:inputText value="#{shoppingCartBean.ingredient.user.secondName}"/>
             <h:outputText value="Adres:"/>
-            <h:inputTextarea/>
+            <h:inputTextarea value="#{shoppingCartBean.ingredient.user.address}"/>
             <h:outputText value=""/>
             <h:commandButton value="Finalizuj"/>
         </h:panelGrid>

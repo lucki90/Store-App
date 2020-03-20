@@ -7,17 +7,32 @@
 
 <ui:composition template="/template/common/schema.xhtml">
     <ui:define name="content">
-        <h2> Lista produktów dla kategorii Oprogramowanie</h2>
-        <h:dataTable id="productTable">
-            <h:column>
-                <f:facet name="header">Nazwa</f:facet>
-                <h:outputText value="Name"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">Cena</f:facet>
-                <h:outputText value="Price"/>
-            </h:column>
-        </h:dataTable>
+        <h2> Lista produktów dla kategorii #{productBean.category.name}</h2>
+        <h:form>
+            <h:dataTable id="productTable" value="#{productBean.products}" var="product">
+                <h:column>
+                    <f:facet name="header">Nazwa</f:facet>
+                    <h:outputLink value="product-details.xhtml">
+                        <f:param name="id" value="#{product.id}"/>
+                        <h:outputText value="#{product.name}"/>
+                    </h:outputLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cena</f:facet>
+                    <h:outputFormat value="#{product.price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Dodaj</f:facet>
+                    <h:commandButton value="Dodaj"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandLink rendered="#{productBean.previous}">&laquo;</h:commandLink>
+            <h:commandLink rendered="#{productBean.next}">&raquo;</h:commandLink>
+            <br/>
+            <h:commandButton value="Do koszyka"/>
+            <h:commandButton value="Główna"/>
+        </h:form>
+
     </ui:define>
 </ui:composition>
 
