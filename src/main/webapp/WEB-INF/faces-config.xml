@@ -10,6 +10,10 @@
         <validator-id>emailValidator</validator-id>
         <validator-class>pl.luckit.validator.EmailValidator</validator-class>
     </validator>
+    <converter>
+        <converter-id>productConverter</converter-id>
+        <converter-class>pl.luckit.converter.ProductConverter</converter-class>
+    </converter>
 
 
 </faces-config>

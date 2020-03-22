@@ -15,11 +15,11 @@
                     <h4>Twój koszyk</h4>
                     <h:commandLink value="Przejdź"/>
                     <h4>Przejdź do wybranego produktu...</h4>
-                    <h:selectOneMenu>
-                        <f:selectItem itemLabel="Procesor Quead" itemValue="processor_quad"/>
-                        <f:selectItem itemLabel="Procesor Dual" itemValue="processor_dual"/>
+                    <h:selectOneMenu value="#{topProductBean.selectedProduct}">
+                        <f:selectItems value="#{topProductBean.topProducts}"/>
+                        <f:converter converterId="productConverter"/>
                     </h:selectOneMenu>
-                    <h:commandButton value="Idź"/>
+                    <h:commandButton value="Idź" action="product-details.xhtml"/>
                 </h:form>
             </h:panelGroup>
         </h:panelGrid>

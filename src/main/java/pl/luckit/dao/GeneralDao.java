@@ -79,6 +79,11 @@ public class GeneralDao {
         return null;
     }
 
+    public List<Product> getTopProducts(){
+
+        return this.products.subList(0,2);
+    }
+
     public void addOrder(Order order) {
         orders.add(order);
     }
