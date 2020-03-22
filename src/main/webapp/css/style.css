@@ -2,3 +2,12 @@
     width: 400px;
     background-color: cornsilk;
 }
+
+.errorMessages {
+    background-color: #e62a10;
+    color: #ffffff;
+    border: 1px none #e62a10;
+    margin: 0;
+    font-size: 12px;
+    border-radius: 5px;
+}

@@ -3,21 +3,46 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/template/common/schema.xhtml">
     <ui:define name="content">
         <h2>Zakończ zamówienie</h2>
-        <h:panelGrid columns="2">
-            <h:outputText value="Imię:"/>
-            <h:inputText value="#{shoppingCartBean.ingredient.user.name}"/>
-            <h:outputText value="Naziwsko:"/>
-            <h:inputText value="#{shoppingCartBean.ingredient.user.secondName}"/>
-            <h:outputText value="Adres:"/>
-            <h:inputTextarea value="#{shoppingCartBean.ingredient.user.address}"/>
-            <h:outputText value=""/>
-            <h:commandButton value="Finalizuj"/>
-        </h:panelGrid>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputText value="Adres e-mail"/>
+                <h:inputTextarea id="emailInput" required="true" requiredMessage="Pole e-mail jest wymagana!"
+                                 value="#{shoppingCartBean.order.user.email}">
+                    <f:validator validatorId="emailValidator"/>
+                </h:inputTextarea>
+                <h:messages styleClass="errorMessages" for="emailInput" />
+
+                <h:outputText value="Imię:"/>
+                <h:inputText id="inputName" validatorMessage="Podane imie nie jest poprawne!"
+                             requiredMessage="Pole Imie jest wymagane!" required="true"
+                             value="#{shoppingCartBean.order.user.name}">
+                    <f:validateLength minimum="2" maximum="20"/>
+                </h:inputText>
+                <h:messages styleClass="errorMessages" for="inputName"/>
+
+                <h:outputText value="Naziwsko:"/>
+                <h:inputText id="inputSecondname" validatorMessage="Podane nazwisko nie jest poprawne!"
+                             requiredMessage="Pole Nazwisko jest wymagane!" required="true"
+                             value="#{shoppingCartBean.order.user.secondName}">
+                    <f:validateLength minimum="2" maximum="20"/>
+                </h:inputText>
+                <h:messages styleClass="errorMessages" for="inputSecondname"/>
+
+                <h:outputText value="Adres:"/>
+                <h:inputTextarea id="inputAddress" requiredMessage="Pole Adres jest wymagane!" required="true"
+                                 value="#{shoppingCartBean.order.user.address}"/>
+                <h:messages styleClass="errorMessages" for="inputAddress"/>
+                <h:outputText value=""/>
+
+                <h:commandButton value="Finalizuj"/>
+
+            </h:panelGrid>
+        </h:form>
     </ui:define>
 </ui:composition>
 

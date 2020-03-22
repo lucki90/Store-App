@@ -15,7 +15,7 @@ public class Order {
     private int id;
     private Date date;
     private List<Ingredient> ingredients = new ArrayList<Ingredient>();
-    private User user;
+    private User user = new User();
 
     public Order() {
     }
