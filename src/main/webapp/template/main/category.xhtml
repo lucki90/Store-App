@@ -7,11 +7,12 @@
 <ui:component>
     <h:form>
         <h4>Kategorie</h4>
-        <h:outputText value="sadasdasd"/>
         <ul>
             <ui:repeat value="#{categoryBean.categories}" var="category">
                 <li>
-                    <h:commandLink value="#{category.getName()}"></h:commandLink>
+                    <h:commandLink value="#{category.getName()}" action="product-list.xhtml">
+
+                    </h:commandLink>
                 </li>
             </ui:repeat>
 

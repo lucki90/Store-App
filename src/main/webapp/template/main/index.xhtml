@@ -13,7 +13,7 @@
             <h:panelGroup>
                 <h:form>
                     <h4>Twój koszyk</h4>
-                    <h:commandLink value="Przejdź"/>
+                    <h:commandLink value="Przejdź" action="shopping-cart.xhtml"/>
                     <h4>Przejdź do wybranego produktu...</h4>
                     <h:selectOneMenu value="#{topProductBean.selectedProduct}">
                         <f:selectItems value="#{topProductBean.topProducts}"/>

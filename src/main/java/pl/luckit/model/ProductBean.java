@@ -41,4 +41,17 @@ public class ProductBean {
         this.products.setWrappedData(products);
     }
 
+    public String goToPrevious() {
+        this.page--;
+        this.refreshModel();
+        return "";
+
+    }
+
+    public String goToNext() {
+        this.page++;
+        this.refreshModel();
+        return "";
+    }
+
 }

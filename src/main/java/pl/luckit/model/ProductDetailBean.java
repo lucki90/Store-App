@@ -19,6 +19,9 @@ public class ProductDetailBean {
     @ManagedProperty("#{param.id}")
     private int productId;
 
+    @ManagedProperty("#{topProductBean}")
+    private TopProductBean topProductBean;
+
     public void setProductId(int productId) {
         this.productId = productId;
         if (productId > 0) {
@@ -26,5 +29,11 @@ public class ProductDetailBean {
         }
     }
 
-
+    public void setTopProductBean(TopProductBean topProductBean) {
+        this.topProductBean = topProductBean;
+        Product product = topProductBean.getSelectedProduct();
+        if (product != null) {
+            this.chosenProduct = product;
+        }
+    }
 }

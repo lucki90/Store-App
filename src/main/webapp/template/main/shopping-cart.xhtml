@@ -28,14 +28,14 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Przelicz</f:facet>
-                    <h:commandButton value="Przelicz"/>
+                    <h:commandButton value="Przelicz" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">Usuń</f:facet>
-                    <h:commandButton value="Usuń"/>
+                    <h:commandButton value="Usuń" action="#{shoppingCartBean.deleteIngredient}"/>
                 </h:column>
             </h:dataTable>
-            <h:commandButton value="Do kasy"/>
+            <h:commandButton value="Do kasy" action="endShopping"/>
         </h:form>
     </ui:define>
 </ui:composition>

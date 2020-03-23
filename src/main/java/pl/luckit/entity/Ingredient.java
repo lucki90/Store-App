@@ -19,6 +19,13 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public Ingredient(int quantity, BigDecimal price, Product product, Order order) {
+        this.quantity = quantity;
+        this.price = price;
+        this.product = product;
+        this.order = order;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
