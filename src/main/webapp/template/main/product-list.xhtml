@@ -23,14 +23,16 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Dodaj</f:facet>
-                    <h:commandButton value="Dodaj" action="#{shoppingCartBean.addToShoppingCart(product.id)}"/>
+                    <h:commandButton value="Dodaj" action="#{shoppingCartBean.addToShoppingCart(product.id)}">
+                        <f:setPropertyActionListener value="#{product}" target="#{shoppingCartBean.selectedProduct}"/>
+                    </h:commandButton>
                 </h:column>
             </h:dataTable>
             <h:commandLink rendered="#{productBean.previous}" action="#{productBean.goToPrevious}">&laquo;</h:commandLink>
             <h:commandLink rendered="#{productBean.next}" action="#{productBean.goToNext}">&raquo;</h:commandLink>
             <br/>
             <h:commandButton value="Do koszyka" action="shopping-cart.xhtml"/>
-            <h:commandButton value="Główna" action="index.html"/>
+            <h:commandButton value="Główna" action="index.xhtml"/>
         </h:form>
 
     </ui:define>

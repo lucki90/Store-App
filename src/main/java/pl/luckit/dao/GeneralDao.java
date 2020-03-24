@@ -27,7 +27,7 @@ public class GeneralDao {
         Product p = new Product(1, "Procesor Quad", new BigDecimal(550), 10, processors, "Opis procesora Quad");
         Product p1 = new Product(2, "Procesor Dual", new BigDecimal(350), 10, processors, "Opis procesora Dual");
         Product p2 = new Product(3, "Procesor Single", new BigDecimal(200), 10, processors, "Opis procesora Single");
-        Product p3 = new Product(3, "Pamięc 4 GB", new BigDecimal(100), 10, ram, "Opis pamieci RAM");
+        Product p3 = new Product(4, "Pamięc 4 GB", new BigDecimal(100), 10, ram, "Opis pamieci RAM");
         products.addAll(Arrays.asList(p, p1, p2, p3));
     }
 
@@ -47,7 +47,7 @@ public class GeneralDao {
             chosenProducts = this.products;
         } else {
             chosenProducts = new ArrayList<>();
-            for (Product product : chosenProducts) {
+            for (Product product : this.products) {
                 if (product.getCategory().equals(category)) {
                     chosenProducts.add(product);
                 }

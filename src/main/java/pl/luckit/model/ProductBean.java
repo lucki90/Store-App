@@ -22,6 +22,13 @@ public class ProductBean {
 
     private GeneralDao dao = GeneralDao.getInstance();
 
+    public void setCategory(Category category) {
+        this.category = category;
+        this.page =0;
+        this.refreshModel();
+
+    }
+
     public boolean isPrevious() {
         return this.page > 0;
     }

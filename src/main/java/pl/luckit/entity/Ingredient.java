@@ -43,4 +43,13 @@ public class Ingredient {
     public BigDecimal getSummary() {
         return this.price.multiply(new BigDecimal(this.quantity));
     }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "quantity=" + quantity +
+                ", price=" + price +
+                ", product=" + product +
+                '}';
+    }
 }

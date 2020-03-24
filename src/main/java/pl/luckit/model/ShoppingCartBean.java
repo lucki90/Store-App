@@ -8,6 +8,8 @@ import pl.luckit.entity.Product;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import java.awt.event.ActionEvent;
 
 @ManagedBean
 @SessionScoped
@@ -54,6 +56,12 @@ public class ShoppingCartBean {
         Ingredient newIngredient = new Ingredient(1, selectedProduct.getPrice(), selectedProduct, order);
         order.getIngredients().add(newIngredient);
         return "shopping-cart.xhtml";
+    }
+
+    public void actionListener(ActionEvent actionEvent){
+         int productId = Integer.parseInt(FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("productId"));
+
+        this.selectedProduct = GeneralDao.getInstance().getProductById(productId);
     }
 
 
